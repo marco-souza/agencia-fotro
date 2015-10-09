@@ -1,0 +1,34 @@
+{
+  "name": "agencia-olian",
+  "version": "0.0.0",
+  "authors": [
+    "Marco Antônio <ma.souza.junior@gmail.com>"
+  ],
+  "description": "Agência de fotos jornalistica.",
+  "main": "index.html",
+  "moduleType": [
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "portfolio",
+    "agência",
+    "fotográfica"
+  ],
+  "license": "MIT",
+  "homepage": "www.olian.com.br",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-flickr": "*",
+    "jquery": "~2.1.4",
+    "font-awesome": "~4.4.0",
+    "material-design-lite": "~1.0.5"
+  }
+}

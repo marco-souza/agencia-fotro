@@ -1,0 +1,78 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>angular-flickr module</title>
+    <meta name="description" content="A flickr module for angular js. The module includes support for creating a photo gallery, thumbnail view, and all of the directives/filters/services to support it using the Flickr API.">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <link rel="stylesheet" href="styles/css/bootstrap.css">
+    <link rel="stylesheet" href="styles/css/bootstrap-glyphicons.css">
+    <link rel="stylesheet" href="styles/css/app.css">
+    <!--<link rel="stylesheet" href="../styles/animate.css">-->
+    <!--<link rel="stylesheet" href="../styles/loading.css">-->
+    <!--<link rel="stylesheet" href="../styles/modules.css">-->
+    <link rel="stylesheet" href="https://rawgithub.com/rustygreen/angular-flickr/master/dist/angular-flickr.min.css">
+</head>
+<body ng-app="flickrApp" class="ng-cloak">
+<!--[if lt IE 7]>
+<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser
+    today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better
+    experience this site.</p>
+<![endif]-->
+
+<!-- ng routes hook -->
+<div id="nav" class="navbar" ng-include="'views/navbar.html'"></div>
+
+<div ng-view class="main-view"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular-resource.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular-mobile.min.js"></script>
+<script src="https://rawgithub.com/rustygreen/angular-flickr/master/dist/angular-flickr.min.js"></script>
+
+<!--<script src="../modules/flickr.js"></script>-->
+<!--<script src="../modules/services/flickrLoading.js"></script>-->
+<!--<script src="../modules/services/Photo.js"></script>-->
+<!--<script src="../modules/services/Photoset.js"></script>-->
+<!--<script src="../modules/directives/loadingBalls.js"></script>-->
+<!--<script src="../modules/directives/photoFilter.js"></script>-->
+<!--<script src="../modules/directives/imgAnimate.js"></script>-->
+<!--<script src="../modules/directives/photoset/photosetList.js"></script>-->
+<!--<script src="../modules/directives/photoset/photosetThumbnails.js"></script>-->
+<!--<script src="../modules/directives/photoset/photosetSlideshow.js"></script>-->
+<!--<script src="../modules/directives/photoset/photosetPanel.js"></script>-->
+
+<script src="scripts/app.js"></script>
+<script src="scripts/controllers/main.js"></script>
+<script src="scripts/controllers/nav.js"></script>
+
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+    var sc_project=9148383;
+    var sc_invisible=1;
+    var sc_security="87f306dd";
+    var scJsHost = (("https:" == document.location.protocol) ?
+            "https://secure." : "http://www.");
+    document.write("<sc"+"ript type='text/javascript' src='" +
+            scJsHost+
+            "statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="website
+statistics" href="http://statcounter.com/"
+target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/9148383/0/87f306dd/1/"
+alt="website statistics"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+
+</body>
+</html>

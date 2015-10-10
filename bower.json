@@ -29,6 +29,10 @@
     "angular-flickr": "*",
     "jquery": "~2.1.4",
     "font-awesome": "~4.4.0",
-    "material-design-lite": "~1.0.5"
+    "material-design-lite": "~1.0.5",
+    "autogrow": "~1.0.3",
+    "jquery-ui": "~1.11.4",
+    "slick-carousel": "~1.5.8",
+    "angular-slick": "~0.2.1"
   }
 }

@@ -98,13 +98,21 @@ h1, h2
   width: 100%
   box-sizing: border-box
   +shadow(0, 10px, 15px, 0, rgba(0,0,0,0.75) )
+  position: relative
+  height: 600px
+  background: $cor-menu
 
   img
     +shadow(10px, 0, 15px, 0, rgba(0,0,0,0.75) )
     z-index: 0
+    //left: 100%
     width: 100%
     height: 100%
+    display: none
+    position: absolute
 
+  .visible
+    left: 0
   .description
     background: $cor-bg-banner
     +shadow(10px, 10px, 10px, 0, rgba(140, 180, 180, 0.2) )

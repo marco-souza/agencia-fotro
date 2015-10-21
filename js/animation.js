@@ -23,18 +23,7 @@ $(document).ready(function() {
     $("#mobi-menu").slideToggle('slow');
   });
 
-  // Slide using Slick Carousel
-  // $('slick').slick({
-  //   slide: 'img',
-  //   autoplay: false,
-  //   autoplaySpeed: 4000,
-  //   accessibility: true,
-  //   arrows: false,
-  //   infinite: true,
-  //   pauseonhover: true,
-  //   responsive: true
-  //   // swipe: true,
-  //   // touchmove: true
-  // });
+
+  $('#slide img').hide();
 
 });

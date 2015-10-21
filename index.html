@@ -36,13 +36,13 @@
 
     <!-- Load JS -->
 
-    <!-- JQuery code -->
-    <script src="./js/animation.js"></script>
     <!-- Angular Code -->
     <script src="./js/modules.js"></script>
     <script src="./js/controllers.js"></script>
     <script src="./js/directives.js"></script>
     <script src="./js/routes.js"></script>
+    <!-- JQuery code -->
+    <script src="./js/animation.js"></script>
 
 
   <!-- Meta area -->
@@ -53,7 +53,7 @@
   <title>Agência Olian</title>
 
 </head>
-<body>
+<body ng-app='Portfolio' >
 <!-- Header -->
 <div class="block">
   <div id="header">
@@ -102,22 +102,24 @@
 
   <!-- Slides -->
 
-  <div id="slide" ng-app='Slider' ng-controller='bannerCtrl'>
+  <div id="slide" ng-controller='bannerCtrl'>
 
     <!-- Imagens no Slick Element -->
 
-    <!-- <img ng-repeat="img in imgs" ng-src="{{img.url}}" alt="{{img.name}}"> -->
-    <img ng-src="{{ imgs[currentImg].url }}" alt="{{currentImg}}">
+    <img ng-repeat="img in imgs" ng-src="{{img.url}}" class="{{img.class}}" on-last-repeat>
+    <!-- <img ng-src="{{ imgs[currentImg].url }}" alt="{{currentImg}}"> -->
 
 
     <!-- Área para descrição -->
-    <div class="description">
+    <div class="description" ng-onLoad='play()'>
 
       <!-- Texto -->
-      <h1>Agência Olian - 15 anos de sucesso!</h1>
+      <h1  ng-show='imgs[currentImg].title'>{{ imgs[currentImg].title }}</h1>
 
       <!-- Botão -->
-      <button>Click-me</button>
+      <a href="{{ imgs[currentImg].link }}" ng-show='imgs[currentImg].link'>
+        <button> Clique aqui</button>
+      </a>
 
       <!-- Navegação -->
       <div class="navigation">
@@ -156,10 +158,10 @@
         Portfólio
       </h2></a>
 
-      <div class="grid" ng-app='portfolioPreview' ng-controller='galeriaCtrl'>
+      <div class="grid" ng-controller='galeriaCtrl'>
 
         <div on-last-repeat ng-repeat='album in data.photosets.photoset' class='item'>
-          <img class='capa mdl-shadow--2dp' ng-src="https://farm{{album.farm}}.staticflickr.com/{{album.server}}/{{album.primary}}_{{album.secret}}_k.jpg" alt="">
+          <img class='capa mdl-shadow--2dp' ng-src="https://farm{{album.farm}}.staticflickr.com/{{album.server}}/{{album.primary}}_{{album.secret}}_m.jpg" alt="">
           <div class="info">
               <h4><a href="https://www.flickr.com/photos/agencia-olian/albums/{{album.id}}" class="titulo">{{album.title._content}}</a></h4>
               <div class="qntd-fotos">{{album.photos}} fotos</div>

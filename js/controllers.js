@@ -10,18 +10,18 @@ navApp.controller('menuCtrl', ['$scope', '$http', function($scope, $http) {
           "icon": "fa-photo",
           "link": "#"
       },
-      {
-          "id": 2,
-          "name": "Posts Recentes",
-          "icon": "fa-newspaper-o",
-          "link": "#"
-      },
-      {
-          "id": 3,
-          "name": "Histórias",
-          "icon": "fa-book",
-          "link": "#"
-      },
+    //   {
+    //       "id": 2,
+    //       "name": "Posts Recentes",
+    //       "icon": "fa-newspaper-o",
+    //       "link": "#"
+    //   },
+    //   {
+    //       "id": 3,
+    //       "name": "Histórias",
+    //       "icon": "fa-book",
+    //       "link": "#"
+    //   },
       {
           "id": 4,
           "name": "Contato",

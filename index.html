@@ -61,11 +61,14 @@
 
     <div id="social">
         <h5>Redes Sociais</h5>
-        <a href="#">
+        <a href="https://www.facebook.com/agenciafotro/?fref=ts">
             <i class="fa fa-facebook-official fa-2x"></i>
         </a>
-        <a href="#">
+        <a href="https://www.flickr.com/photos/137657298@N03/">
             <i class="fa fa-flickr fa-2x"></i>
+        </a>
+        <a href="https://medium.com/@agenciafotro">
+            <i class="fa fa-medium fa-2x"></i>
         </a>
 
     </div>
@@ -98,8 +101,10 @@
 
           <h2><a href='' ng-click='Back()'><i class="fa fa-arrow-left"></i></a> {{data.photoset.title}}</h2>
           <div on-last-repeat ng-repeat="photo in data.photoset.photo" class="item-port  mdl-cell mdl-cell--3-col" style=" height: 200px; overflow: hidden">
+
               <img class='capa mdl-shadow--2dp' ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_z.jpg">
-              <a class="info" ng-click="showImage(photo, data.photoset.id)" class="titulo">
+
+              <a class="info" HREF="https://www.flickr.com/photos/137657298@N03/{{photo.id}}/" target="_blank" class="titulo">
                       <h4>{{photo.title}}</h4>
               </a>
           </div>
@@ -107,7 +112,7 @@
         </div>
 
         <!-- View de uma foto -->
-        <div ng-if='viewImage' id=''viewImage class='mdl-cell mdl-cell--12-col' >
+        <!-- <div ng-if='viewImage' id=''viewImage class='mdl-cell mdl-cell--12-col' >
 
           <h2><a href='' ng-click='Back()'><i class="fa fa-arrow-left"></i></a> {{viewImage.title}}</h2>
           <img class='mdl-cell mdl-cell--3-col' ng-src="https://farm{{viewImage.farm}}.staticflickr.com/{{viewImage.server}}/{{viewImage.id}}_{{viewImage.secret}}_h.jpg">
@@ -123,7 +128,7 @@
             });
             });
 
-          </script>
+          </script> -->
 
         </div>
 

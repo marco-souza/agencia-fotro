@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Portfolio",
+        "icon": "fa-facebook-o",
+        "link": "/portfolio/"
+    },
+    {
+        "name": "Histórias",
+        "icon": "fa-photo",
+        "link": "/portfolio/"
+    },
+    {
+        "name": "Posts Recentes",
+        "icon": "fa-photo",
+        "link": "/portfolio/"
+    },
+    {
+        "name": "Contato",
+        "icon": "fa-photo",
+        "link": "/portfolio/"
+    }
+]

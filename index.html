@@ -1,214 +1,175 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Agência Fotro</title>
 
-  <!-- Import -->
 
     <!-- AngularJS -->
-    <script src="./bower_components/angular/angular.min.js"></script>
-      <!-- Angular-Flickr(CSS+JS) -->
-    <link rel="stylesheet" href="./bower_components/angular-flickr/dist/angular-flickr.min.css">
-    <script src="./bower_components/angular-flickr/dist/angular-flickr.min.js"></script>
+    <script type="text/javascript" src="./bower_components/angular/angular.min.js"></script>
 
-    <!-- JQuery -->
-    <script src="./bower_components/jquery/dist/jquery.min.js"></script>
-      <!-- JQuery UI -->
-    <script src="./bower_components/jquery-ui/jquery-ui.min.js"></script>
-      <!-- AutoGrow -->
-    <script src="./bower_components/autogrow/autogrow.min.js"></script>
-      <!-- Slick Carousel + Angular-Slick -->
-    <script src="./bower_components/slick-carousel/slick/slick.min.js"></script>
-    <script src="bower_components/angular-slick/dist/slick.js"></script>
-    <!-- Fonts [Roboto, Merriweather] -->
-    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Noticia+Text' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Noto+Serif' rel='stylesheet' type='text/css'>
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="./bower_components/font-awesome/css/font-awesome.min.css" >
     <!-- Material Design Lite -->
-    <link rel="stylesheet" href="./bower_components/material-design-lite/material.min.css">
+    <!-- <link rel="stylesheet" href="./bower_components/material-design-lite/material.min.css">
     <script src="./bower_components/material-design-lite/material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.1/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.1.1/material.min.js"></script>
 
-  <!-- My code -->
-    <!-- Olian CSS -->
-    <link rel="stylesheet" href="./css/olian.css">
+    <!-- jQuery -->
+    <script type="text/javascript" src="./bower_components/jquery/dist/jquery.min.js"></script>
 
-    <!-- Load JS -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <script type="text/javascript" src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./bower_components/bootstrap/js/modal.js"></script>
+
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" href="./bower_components/font-awesome/css/font-awesome.min.css">
+
+    <!-- Page style -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/photo-view.css">
+    <script type="text/javascript" src="./js/menu.js"></script>
+    <script src="./js/animation.js"></script>
+    <!-- <script src="./js/fb-feed.js"></script> -->
 
     <!-- Angular Code -->
     <script src="./js/modules.js"></script>
     <script src="./js/controllers.js"></script>
     <script src="./js/directives.js"></script>
     <script src="./js/routes.js"></script>
-    <!-- JQuery code -->
-    <script src="./js/animation.js"></script>
-
-
-  <!-- Meta area -->
-  <meta name='viewport' content='width=width-device, initial-scale=1'>
-  <meta charset="UTF-8">
-
-  <!-- Título -->
-  <title>Agência Olian</title>
 
 </head>
-<body ng-app='Portfolio' >
-<!-- Header -->
-<div class="block">
-  <div id="header">
-    <!-- Logo -->
-    <img src="img/logo.png" alt="Olian Logo">
+<body ng-app="navApp" ng-controller="menuCtrl" >
 
-    <!-- Menu Container -->
+<div id="nav" class="">
+
+    <div id="btn">
+        <i class="fa fa-bars fa-2x"></i>
+    </div>
+
     <div id="menu">
-      <a href='https://www.flickr.com/photos/agencia-olian/albums'>
-        Portfolio
-      </a>
-      <a href='#noticias'>
-        Notícias
-      </a>
-      <a href='#contato'>
-        Contato
-      </a>
-      <!-- Toggle menu -->
-      <a href="#" class='menu-btn'>
-        <i class="fa fa-bars"></i>
-      </a>
+        <div ng-repeat="item in items" class="item {{selected(item.id, currentPage)}}"  ng-click="changePage(item.id)">
+            <a href="">
+                <i class="fa {{item.icon}} fa-2x"></i>
+                <spam>{{item.name}}</spam>
+            </a>
+        </div>
     </div>
 
-
-  </div>
-</div>
-
-<!-- Mobile Menu -->
-<div class="block" id="mobi-menu">
-
-    <a href='https://www.flickr.com/photos/agencia-olian/albums'>
-      Portfolio
-    </a>
-
-    <a href='#noticias'>
-      Notícias
-    </a>
-
-    <a href='#contato'>
-      Contato
-    </a>
-</div>
-
-<!-- Banner -->
-<div id="banner">
-
-  <!-- Slides -->
-
-  <div id="slide" ng-controller='bannerCtrl'>
-
-    <!-- Imagens no Slick Element -->
-
-    <img ng-repeat="img in imgs" ng-src="{{img.url}}" class="{{img.class}}" on-last-repeat>
-    <!-- <img ng-src="{{ imgs[currentImg].url }}" alt="{{currentImg}}"> -->
-
-
-    <!-- Área para descrição -->
-    <div class="description" ng-onLoad='play()'>
-
-      <!-- Texto -->
-      <h1  ng-show='imgs[currentImg].title'>{{ imgs[currentImg].title }}</h1>
-
-      <!-- Botão -->
-      <a href="{{ imgs[currentImg].link }}" ng-show='imgs[currentImg].link'>
-        <button> Clique aqui</button>
-      </a>
-
-      <!-- Navegação -->
-      <div class="navigation">
-        <a href="" ng-click='next()' class="arrow-left"> <i class="fa fa-angle-left"></i> </a>
-        <a href="" ng-click='back()' class="arrow-right"> <i class="fa fa-angle-right"></i> </a>
-      </div>
+    <div id="social">
+        <h5>Redes Sociais</h5>
+        <a href="#">
+            <i class="fa fa-facebook-official fa-2x"></i>
+        </a>
+        <a href="#">
+            <i class="fa fa-flickr fa-2x"></i>
+        </a>
 
     </div>
 
-  </div>
-
 </div>
 
-<!-- container -->
-<div id="conteudo" class="block">
+<div id="header"><img src="http://i.imgur.com/tjgz2Tk.png" alt=""></div>
 
-  <!-- <h1> Meus Trabalhos </h1> -->
+<div id="content">
 
-  <div id="boxes">
+    <H2>{{items[currentPage-1].name}}</H2>
 
-    <!-- Notícias -->
-    <div class='box'>
-      <a name="noticias"><h2>
-        <i class="fa fa-newspaper-o"></i>
-        Notícias
-      </h2></a>
-      <div class="grid">
+    <div ng-if="currentPage==1">
 
-      </div>
-    </div>
+        <div id="grid" ng-controller='portfolioCtrl' class=" mdl-grid">
 
-    <!-- Portfólio -->
-     <div class='box'>
-      <a name="portfolio"><h2>
-        <i class="fa fa-picture-o"></i>
-        Portfólio
-      </h2></a>
+        <div ng-if='!data'class="loading"></div>
 
-      <div class="grid" ng-controller='galeriaCtrl'>
-
-        <div on-last-repeat ng-repeat='album in data.photosets.photoset' class='item'>
-          <img class='capa mdl-shadow--2dp' ng-src="https://farm{{album.farm}}.staticflickr.com/{{album.server}}/{{album.primary}}_{{album.secret}}_m.jpg" alt="">
-          <div class="info">
-              <h4><a href="https://www.flickr.com/photos/agencia-olian/albums/{{album.id}}" class="titulo">{{album.title._content}}</a></h4>
-              <div class="qntd-fotos">{{album.photos}} fotos</div>
-          </div>
+        <!-- Visualização de todos albums -->
+        <div ng-if='!viewAlbum && !viewImage' on-last-repeat ng-repeat="album in data.photosets.photoset" class="item-port  mdl-cell mdl-cell--3-col">
+          <img class='capa mdl-shadow--2dp' ng-src="https://farm{{album.farm}}.staticflickr.com/{{album.server}}/{{album.primary}}_{{album.secret}}_z.jpg" alt="">
+          <a href='' class="info" ng-click="detail(album.id)" class="titulo">
+                  <h4>{{album.title._content}}</h4>
+                  <div class="qntd-fotos">{{album.photos}} fotos</div>
+          </a>
         </div>
 
-      </div>
+        <!-- Visualização de album -->
+        <div ng-if='viewAlbum' class='frimdl-cell mdl-cell--12-col viewAlbum' >
+
+          <h2><a href='' ng-click='Back()'><i class="fa fa-arrow-left"></i></a> {{data.photoset.title}}</h2>
+          <div on-last-repeat ng-repeat="photo in data.photoset.photo" class="item-port  mdl-cell mdl-cell--3-col" style=" height: 200px; overflow: hidden">
+              <img class='capa mdl-shadow--2dp' ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_z.jpg">
+              <a class="info" ng-click="showImage(photo, data.photoset.id)" class="titulo">
+                      <h4>{{photo.title}}</h4>
+              </a>
+          </div>
+          <h2><a href='' ng-click='Back()' style='color: #333'><i class="fa fa-arrow-left"></i> Voltar<a href='#header'><i class="fa fa-arrow-up"></i> Topo</h2></a>
+        </div>
+
+        <!-- View de uma foto -->
+        <div ng-if='viewImage' id=''viewImage class='mdl-cell mdl-cell--12-col' >
+
+          <h2><a href='' ng-click='Back()'><i class="fa fa-arrow-left"></i></a> {{viewImage.title}}</h2>
+          <img class='mdl-cell mdl-cell--3-col' ng-src="https://farm{{viewImage.farm}}.staticflickr.com/{{viewImage.server}}/{{viewImage.id}}_{{viewImage.secret}}_h.jpg">
+          <h2><a href='' ng-click='Back()' style='color: #333'><i class="fa fa-arrow-left"></i> Voltar<a href='#header'><i class="fa fa-arrow-up"></i> Topo</h2></a>
+
+          <script type="text/javascript">
+            $(function(){
+            $("a").click(function (event) {
+            event.preventDefault();
+            var idElemento = $(this).attr("href");
+            var deslocamento = $(idElemento).offset().top;
+            $('html, body').animate({ scrollTop: deslocamento }, 'slow');
+            });
+            });
+
+          </script>
+
+        </div>
+
+        </div>
     </div>
 
-  </div>
+    <div ng-if="currentPage==2">
+        <!-- TODO: Timeline de posts recentes -->
+        <div ng-controller='postsCtrl' class="mdl-grid">
+            <!-- {{data}} -->
+        </div>
+    </div>
+
+    <div ng-if="currentPage==3">
+        <!-- TODO: Timeline de Histórias -->
+    </div>
+
+    <div ng-if="currentPage==4">
+        <form action="send-mail.php" method="get" autocomplete="on" role="form">
+
+          <!-- Nome -->
+          <div class="form-group">
+            <label for="name">Seu Nome: </label>
+            <input class="form-control" type="text" id="name" name="name" />
+          </div>
+
+          <!-- E-mail -->
+          <div class="form-group">
+            <label for="email">Seu E-mail: </label>
+            <input class="form-control" type="text" pattern="([a-z._0-9]+@[a-z_0-9]+(.com|.org|.net))" id="email"  name="email"/>
+          </div>
+
+          <!-- Mensagem -->
+          <div class="form-group">
+              <label for="msg">Sua Mensagem: </label>
+              <textarea class="form-control" type="text" rows= "3" id="msg"  name="msg"></textarea>
+          </div>
+
+          <div>
+            <input type="submit" class="btn btn-default" id="submit" value="Enviar!">
+          </div>
+
+
+      </form>
+    </div>
 
 </div>
-
-
-<div class="block">
-  <div id="contato">
-    <a name="contato"><h1>Contato</h1></a>
-    <form action="#">
-
-      <!-- Nome -->
-      <div class="mdl-textfield mdl-js-textfield">
-        <input class="mdl-textfield__input" type="text" pattern="" id="nome" />
-        <label class="mdl-textfield__label" for="nome">Nome...</label>
-      </div>
-
-      <!-- E-mail -->
-      <div class="mdl-textfield mdl-js-textfield">
-        <input class="mdl-textfield__input" type="text" pattern="([a-z._0-9]+@[a-z_0-9]+(.com|.org|.net))" id="email" />
-        <label class="mdl-textfield__label" for="email">E-mail...</label>
-        <span class="mdl-textfield__error">E-mail inválido!</span>
-      </div>
-
-      <!-- Mensagem -->
-      <div class="mdl-textfield mdl-js-textfield">
-        <textarea class="mdl-textfield__input" type="text" rows= "3" id="message" ></textarea>
-        <label class="mdl-textfield__label" for="message">Sua Mensagem Aqui...</label>
-      </div>
-
-      <div>
-        <input type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="submit" value="Enviar e-mail!">
-      </div>
-
-
-  </form>
-
-  </div>
-</div>
-
 </body>
 </html>

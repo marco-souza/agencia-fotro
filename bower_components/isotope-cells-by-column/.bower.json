@@ -1,0 +1,29 @@
+{
+  "name": "isotope-cells-by-column",
+  "main": "cells-by-column.js",
+  "version": "1.1.2",
+  "authors": [
+    "David DeSandro / Metafizzy"
+  ],
+  "description": "cellsByColumn layout mode for Isotope",
+  "dependencies": {
+    "isotope": ">=2.1.0 <2.3.0"
+  },
+  "keywords": [
+    "layout",
+    "isotope",
+    "isotope-layout-mode",
+    "horizontal"
+  ],
+  "homepage": "https://github.com/metafizzy/isotope-cells-by-column",
+  "_release": "1.1.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.1.2",
+    "commit": "a0bcc74443ae08c7113f44ef8c9bf2f4eeeaba70"
+  },
+  "_source": "git://github.com/metafizzy/isotope-cells-by-column.git",
+  "_target": "^1.1.2",
+  "_originalSource": "isotope-cells-by-column",
+  "_direct": true
+}

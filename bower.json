@@ -1,22 +1,13 @@
 {
-  "name": "agencia-olian",
-  "version": "0.0.0",
+  "name": "Fotro",
   "authors": [
     "Marco Antônio <ma.souza.junior@gmail.com>"
   ],
-  "description": "Agência de fotos jornalistica.",
+  "description": "Agência Fotro",
   "main": "index.html",
-  "moduleType": [
-    "globals",
-    "node"
-  ],
-  "keywords": [
-    "portfolio",
-    "agência",
-    "fotográfica"
-  ],
+  "moduleType": [],
   "license": "MIT",
-  "homepage": "www.olian.com.br",
+  "homepage": "www.fotro.com.br",
   "private": true,
   "ignore": [
     "**/.*",
@@ -26,13 +17,9 @@
     "tests"
   ],
   "dependencies": {
-    "angular-flickr": "*",
-    "jquery": "~2.1.4",
-    "font-awesome": "~4.4.0",
-    "material-design-lite": "~1.0.5",
-    "autogrow": "~1.0.3",
-    "jquery-ui": "~1.11.4",
-    "slick-carousel": "~1.5.8",
-    "angular-slick": "~0.2.1"
+    "material-design-lite": "~1.0.6",
+    "angular": "angularjs#~1.4.8",
+    "font-awesome": "fontawesome#~4.5.0",
+    "isotope-cells-by-column": "^1.1.2"
   }
 }

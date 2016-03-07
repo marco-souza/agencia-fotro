@@ -81,98 +81,79 @@
 
     <H2>{{items[currentPage-1].name}}</H2>
 
-    <div ng-if="currentPage==1">
+        <div ng-if="currentPage==1">
 
-        <div id="grid" ng-controller='portfolioCtrl' class=" mdl-grid">
+            <div id="grid" ng-controller='portfolioCtrl' class=" mdl-grid">
 
-        <div ng-if='!data'class="loading"></div>
+                <div ng-if='!data'class="loading"></div>
 
-        <!-- Visualização de todos albums -->
-        <div ng-if='!viewAlbum && !viewImage' on-last-repeat ng-repeat="album in data.photosets.photoset" class="item-port  mdl-cell mdl-cell--3-col">
-          <img class='capa mdl-shadow--2dp' ng-src="https://farm{{album.farm}}.staticflickr.com/{{album.server}}/{{album.primary}}_{{album.secret}}_z.jpg" alt="">
-          <a href='' class="info" ng-click="detail(album.id)" class="titulo">
-                  <h4>{{album.title._content}}</h4>
-                  <div class="qntd-fotos">{{album.photos}} fotos</div>
-          </a>
-        </div>
+                <!-- Visualização de todos albums -->
+                <div ng-if='!viewAlbum && !viewImage' on-last-repeat ng-repeat="album in data.photosets.photoset" class="item-port  mdl-cell mdl-cell--3-col">
+                  <img class='capa mdl-shadow--2dp' ng-src="https://farm{{album.farm}}.staticflickr.com/{{album.server}}/{{album.primary}}_{{album.secret}}_z.jpg" alt="">
+                  <a href='' class="info" ng-click="detail(album.id)" class="titulo">
+                          <h4>{{album.title._content}}</h4>
+                          <div class="qntd-fotos">{{album.photos}} fotos</div>
+                  </a>
+                </div>
 
-        <!-- Visualização de album -->
-        <div ng-if='viewAlbum' class='frimdl-cell mdl-cell--12-col viewAlbum' >
+                <!-- Visualização de album -->
+                <div ng-if='viewAlbum' class='frimdl-cell mdl-cell--12-col viewAlbum' >
 
-          <h2><a href='' ng-click='Back()'><i class="fa fa-arrow-left"></i></a> {{data.photoset.title}}</h2>
-          <div on-last-repeat ng-repeat="photo in data.photoset.photo" class="item-port  mdl-cell mdl-cell--3-col" style=" height: 200px; overflow: hidden">
+                  <h2><a href='' ng-click='Back()'><i class="fa fa-arrow-left"></i></a> {{data.photoset.title}}</h2>
+                  <div on-last-repeat ng-repeat="photo in data.photoset.photo" class="item-port  mdl-cell mdl-cell--3-col" style=" height: 200px; overflow: hidden">
 
-              <img class='capa mdl-shadow--2dp' ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_z.jpg">
+                      <img class='capa mdl-shadow--2dp' ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_z.jpg">
 
-              <a class="info" HREF="https://www.flickr.com/photos/137657298@N03/{{photo.id}}/" target="_blank" class="titulo">
-                      <h4>{{photo.title}}</h4>
-              </a>
-          </div>
-          <h2><a href='' ng-click='Back()' style='color: #333'><i class="fa fa-arrow-left"></i> Voltar<a href='#header'><i class="fa fa-arrow-up"></i> Topo</h2></a>
-        </div>
+                      <a class="info" HREF="https://www.flickr.com/photos/137657298@N03/{{photo.id}}/" target="_blank" class="titulo">
+                              <h4>{{photo.title}}</h4>
+                      </a>
+                  </div>
+                  <h2><a href='' ng-click='Back()' style='color: #333'><i class="fa fa-arrow-left"></i> Voltar<a href='#header'><i class="fa fa-arrow-up"></i> Topo</h2></a>
+                </div>
 
-        <!-- View de uma foto -->
-        <!-- <div ng-if='viewImage' id=''viewImage class='mdl-cell mdl-cell--12-col' >
-
-          <h2><a href='' ng-click='Back()'><i class="fa fa-arrow-left"></i></a> {{viewImage.title}}</h2>
-          <img class='mdl-cell mdl-cell--3-col' ng-src="https://farm{{viewImage.farm}}.staticflickr.com/{{viewImage.server}}/{{viewImage.id}}_{{viewImage.secret}}_h.jpg">
-          <h2><a href='' ng-click='Back()' style='color: #333'><i class="fa fa-arrow-left"></i> Voltar<a href='#header'><i class="fa fa-arrow-up"></i> Topo</h2></a>
-
-          <script type="text/javascript">
-            $(function(){
-            $("a").click(function (event) {
-            event.preventDefault();
-            var idElemento = $(this).attr("href");
-            var deslocamento = $(idElemento).offset().top;
-            $('html, body').animate({ scrollTop: deslocamento }, 'slow');
-            });
-            });
-
-          </script> -->
+            </div>
 
         </div>
 
+        <div ng-if="currentPage==2">
+            <!-- TODO: Timeline de posts recentes -->
+            <div ng-controller='postsCtrl' class="mdl-grid">
+                {{data}}
+            </div>
         </div>
-    </div>
 
-    <div ng-if="currentPage==2">
-        <!-- TODO: Timeline de posts recentes -->
-        <div ng-controller='postsCtrl' class="mdl-grid">
-            <!-- {{data}} -->
+        <div ng-if="currentPage==3">
+            <!-- TODO: Timeline de Histórias -->
         </div>
-    </div>
 
-    <div ng-if="currentPage==3">
-        <!-- TODO: Timeline de Histórias -->
-    </div>
+        <div ng-if="currentPage==4">
+            <form action="send-mail.php" method="get" autocomplete="on" role="form">
 
-    <div ng-if="currentPage==4">
-        <form action="send-mail.php" method="get" autocomplete="on" role="form">
+                <!-- Nome -->
+                <div class="form-group">
+                    <label for="name">Seu Nome: </label>
+                    <input class="form-control" type="text" id="name" name="name" />
+                </div>
 
-          <!-- Nome -->
-          <div class="form-group">
-            <label for="name">Seu Nome: </label>
-            <input class="form-control" type="text" id="name" name="name" />
-          </div>
+                <!-- E-mail -->
+                <div class="form-group">
+                    <label for="email">Seu E-mail: </label>
+                    <input class="form-control" type="text" pattern="([a-z._0-9]+@[a-z_0-9]+(.com|.org|.net))" id="email"  name="email"/>
+                </div>
 
-          <!-- E-mail -->
-          <div class="form-group">
-            <label for="email">Seu E-mail: </label>
-            <input class="form-control" type="text" pattern="([a-z._0-9]+@[a-z_0-9]+(.com|.org|.net))" id="email"  name="email"/>
-          </div>
+                <!-- Mensagem -->
+                <div class="form-group">
+                    <label for="msg">Sua Mensagem: </label>
+                    <textarea class="form-control" type="text" rows= "3" id="msg"  name="msg"></textarea>
+                </div>
 
-          <!-- Mensagem -->
-          <div class="form-group">
-              <label for="msg">Sua Mensagem: </label>
-              <textarea class="form-control" type="text" rows= "3" id="msg"  name="msg"></textarea>
-          </div>
-
-          <div>
-            <input type="submit" class="btn btn-default" id="submit" value="Enviar!">
-          </div>
+                <div>
+                    <input type="submit" class="btn btn-default" id="submit" value="Enviar!">
+                </div>
 
 
-      </form>
+            </form>
+        </div>
     </div>
 
 </div>

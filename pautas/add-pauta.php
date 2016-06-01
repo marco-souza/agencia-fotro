@@ -65,8 +65,8 @@ if( isset($_POST) ) {
 
         // Sucesso
         include('success.html'); // Tela de Sucesso
-        sleep(5);
-        header("Location: http://www.fotro.com.br/pautas");
+        // sleep(5);
+        // header("Location: http://www.fotro.com.br/pautas");
 
     } else {
 

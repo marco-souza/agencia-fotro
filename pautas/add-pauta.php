@@ -31,7 +31,10 @@ if( isset($_POST) ) {
     VALUES ('$title', '$editoria', '$data', '$cobertura', '$licenca', '$atividade', '$empresa', '$endereco', '$orientacoes')";
 
     if (mysqli_query($conn, $sql)) {
-        echo "New record created successfully";
+        // echo "New record created successfully";
+        // header('Location: http://www.example.com/');
+        include('success.html');
+
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
@@ -40,7 +43,8 @@ if( isset($_POST) ) {
     mysqli_close($conn);
 
 }else{
-    echo ("Existe <b>n&atilde;o<b> POST!");
+    // Sem post
+    header("Location: www.fotro.com.br/pautas")
 }
 
 

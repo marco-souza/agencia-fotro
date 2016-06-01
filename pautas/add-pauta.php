@@ -40,8 +40,7 @@ if( isset($_POST) ) {
 
     // Verificação de erro
     if ($erro == 1) {
-        header("Location: http://www.fotro.com.br/pautas");
-        die();
+        header("Location: http://www.fotro.com.br/pautas/");
     }
 
 // Abrindo Conexão
@@ -65,7 +64,6 @@ if( isset($_POST) ) {
 
         // Sucesso
         include('success.html'); // Tela de Sucesso
-        // sleep(5);
         // header("Location: http://www.fotro.com.br/pautas");
 
     } else {
@@ -79,7 +77,7 @@ if( isset($_POST) ) {
 
 }else{
     // Sem post
-    header("Location: http://www.fotro.com.br/pautas");
+    header("Location: http://www.fotro.com.br/pautas/");
 }
 
 

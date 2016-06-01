@@ -44,7 +44,7 @@ if( isset($_POST) ) {
 
 }else{
     // Sem post
-    header("Location: www.fotro.com.br/pautas")
+    header("Location: www.fotro.com.br/pautas");
 }
 
 

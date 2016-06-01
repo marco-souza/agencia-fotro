@@ -36,7 +36,7 @@ if( isset($_POST) ) {
         $erro = 1;
     }
 
-    $orientacoes = ($_POST['orientacoes']);
+    $orientacoes = ($_POST['orientacoes']); // Não obrigatório
 
     // Verificação de erro
     if ($erro == 1) {
@@ -62,11 +62,15 @@ if( isset($_POST) ) {
     VALUES ('$title', '$editoria', '$data', '$cobertura', '$licenca', '$atividade', '$empresa', '$endereco', '$orientacoes')";
 
     if (mysqli_query($conn, $sql)) {
-        // echo "New record created successfully";
-        // header('Location: http://www.example.com/');
-        include('success.html');
+
+        // Sucesso
+        include('success.html'); // Tela de Sucesso
+        sleep(5);
+        header("Location: http://www.fotro.com.br/pautas");
 
     } else {
+
+        // Erro na query
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
 

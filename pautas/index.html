@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./style.css">
+
+    <title>Fotro - Pautas</title>
+</head>
+<body>
+
+    <div id="header"><img src="http://i.imgur.com/tjgz2Tk.png" alt=""></div>
+
+
+    <div id="pauta">
+
+        <div id="path">
+            <h2>Cadastro de Pautas</h2>
+        </div>
+
+        <form action="add-pauta.php" method="post">
+
+            <!-- Titulo -->
+            <div class="form-group  col-lg-12">
+                <label for="title">Título </label>
+                <input class="form-control" type="text" id="title" name="title" />
+            </div>
+
+            <!-- Editoria -->
+            <div class="form-group  col-lg-6">
+                <label for="editoria">Editoria</label>
+                <select class="form-control" name="editoria" id="editoria">
+                    <option value="">Cultura</option>
+                    <option value="">Arte</option>
+                    <option value="">Esporte</option>
+                    <option value="">Ciência e Saúde</option>
+                    <option value="">Politica</option>
+                    <option value="">Tecnologia</option>
+                    <option value="">Tempo e trânsito</option>
+                    <option value="">Social</option>
+                    <option value="">Internacional</option>
+                    <option value="">Cotidiano</option>
+                </select>
+            </div>
+
+            <!-- Data e Hora  -->
+            <div class="form-group  col-lg-6">
+                <label for="time">Data e Hora </label>
+                <input class="form-control" type="datetime-local" id="time" name="time" />
+            </div>
+
+            <!-- Cobertura -->
+            <div class="form-group  col-lg-6">
+                <label for="cobertura">Cobertura</label>
+                <select class="form-control" name="cobertura" id="cobertura">
+                    <option value="">Jornalistico</option>
+                    <option value="">Social</option>
+                    <option value="">Editorial</option>
+                </select>
+            </div>
+
+            <!-- Licensa -->
+            <div class="form-group  col-lg-6">
+                <label for="license">Licensa Padrão </label>
+                <!-- <input class="form-control" type="text" id="license" name="license" /> -->
+                <select class="form-control" name="license" id="license">
+                    <option value="">Venda</option>
+                    <option value="">Divulgação</option>
+                </select>
+            </div>
+
+            <!-- Atividade -->
+            <div class="form-group  col-lg-6">
+                <label for="atividade">Atividade </label>
+                <input class="form-control" type="text" id="atividade" name="atividade" />
+
+            </div>
+
+            <!-- Empresa -->
+            <div class="form-group  col-lg-6">
+                <label for="empresa">Empresa </label>
+                <input class="form-control" type="text" id="empresa" name="empresa" />
+            </div>
+
+            <!-- Endereço -->
+            <div class="form-group  col-lg-6">
+                <label for="address">Endereço </label>
+                <!-- <input class="form-control" type="text" id="title" name="title" /> -->
+                <textarea class="form-control" name="address" id="address" cols="30" rows="10"></textarea>
+            </div>
+
+            <!-- Orientações -->
+            <div class="form-group  col-lg-6">
+                <label for="orientation">Orientações </label>
+                <textarea class="form-control" name="orientation" id="orientation" cols="30" rows="10"></textarea>
+                <!-- <input class="form-control" type="text" id="orientation" name="orientation" /> -->
+            </div>
+
+
+            <!-- Cadastrar -->
+            <div class="form-group  col-lg-12">
+                <button class="form-control " type='submit'>Cadastrar</button>
+            </div>
+
+        </form>
+
+    </div>
+</body>
+</html>

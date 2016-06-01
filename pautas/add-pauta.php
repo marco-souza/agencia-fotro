@@ -1,7 +1,7 @@
 <?php
 
     // Conexão com BD
-    require('connection.php');
+    require('connect.php');
 
     if( isset($_POST['cobertura']) ) {
         echo ("Existe POST! ".$_POST['cobertura']);

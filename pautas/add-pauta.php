@@ -40,7 +40,7 @@ if( isset($_POST) ) {
 
     // Verificação de erro
     if ($erro == 1) {
-        header("Location: www.fotro.com.br/pautas");
+        header("Location: http://www.fotro.com.br/pautas");
         die();
     }
 
@@ -75,7 +75,7 @@ if( isset($_POST) ) {
 
 }else{
     // Sem post
-    header("Location: www.fotro.com.br/pautas");
+    header("Location: http://www.fotro.com.br/pautas");
 }
 
 

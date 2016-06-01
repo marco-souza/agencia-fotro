@@ -1,7 +1,7 @@
 <?php
 
+$orientacoes = ($_POST['orientacoes']);
     // Conexão com BD
-
     if( isset($_POST) ) {
 
         // VARS
@@ -13,10 +13,18 @@
         $atividade = ($_POST['atividade']);
         $empresa = ($_POST['empresa']);
         $endereco = ($_POST['endereco']);
-        $orientacoes = ($_POST['orientacoes']);
 
+// Abrindo Conexão
+        $servername = "localhost";
+        $username = "u411818826_admin";
+        $password = "PjS3LZwzN9vr";
 
-        include_once('connect.php');
+        // Create connection
+        $conn = mysqli_connect($servername, $username, $password);
+        // Check connection
+        if (!$conn) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
 
         // Inserir Pauta na tabela 'pautas'
         $sql = "INSERT INTO pautas (title, editoria, data, cobertura, licenca, atividade, empresa, endereco, orientacoes)
@@ -32,25 +40,14 @@
             echo "Error executing query ".$sql.": " . mysqli_error($conn);
         }
 
+// Fechar Conexão
+        mysqli_close($conn);
     }else{
         echo ("Existe <b>n&atilde;o<b> POST!");
     }
-    // INSERT INTO table_name (column1, column2, column3,...)
-    // VALUES (value1, value2, value3,...)
-
-    // Create database
-    // $sql = "CREATE DATABASE myDB";
-
-    // if (mysqli_query($conn, $sql)) {
-    //     // SQL Successfully executed
-    //     echo "Database created successfully";
-    // } else {
-    //     // Query Error
-    //     echo "Error executing query ".$sql.": " . mysqli_error($conn);
+    
     // }
 
 
-    // Fechar Conexão
-    // mysqli_close($conn);
 
 ?>

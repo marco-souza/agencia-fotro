@@ -1,17 +1,48 @@
 <?php
 
-$orientacoes = ($_POST['orientacoes']);
 if( isset($_POST) ) {
 
 // VARS
     $title = ($_POST['title']);
+    if ($title  == '') {
+        $erro = 1;
+    }
     $editoria = ($_POST['editoria']);
+    if ($editoria  == '') {
+        $erro = 1;
+    }
     $data = ($_POST['data']);
+    if ($data  == '') {
+        $erro = 1;
+    }
     $cobertura = ($_POST['cobertura']);
+    if ( $cobertura == '') {
+        $erro = 1;
+    }
     $licenca = ($_POST['licenca']);
+    if ( $licenca == '') {
+        $erro = 1;
+    }
     $atividade = ($_POST['atividade']);
+    if ( $atividade == '') {
+        $erro = 1;
+    }
     $empresa = ($_POST['empresa']);
+    if ( $empresa == '') {
+        $erro = 1;
+    }
     $endereco = ($_POST['endereco']);
+    if ( $endereco == '') {
+        $erro = 1;
+    }
+
+    $orientacoes = ($_POST['orientacoes']);
+
+    // Verificação de erro
+    if ($erro == 1) {
+        header("Location: www.fotro.com.br/pautas");
+        die();
+    }
 
 // Abrindo Conexão
     $servername = "localhost";

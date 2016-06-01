@@ -6,15 +6,15 @@
     if( isset($_POST) ) {
 
         // VARS
-        $title = $_POST['title'];
-        $editoria = $_POST['editoria'];
-        $data = $_POST['data'];
-        $cobertura = $_POST['cobertura'];
-        $licenca = $_POST['licenca'];
-        $atividade = $_POST['atividade'];
-        $empresa = $_POST['empresa'];
-        $endereco = $_POST['endereco'];
-        $orientacoes = $_POST['orientacoes'];
+        $title = utf8_encode($_POST['title']);
+        $editoria = utf8_encode($_POST['editoria']);
+        $data = utf8_encode($_POST['data']);
+        $cobertura = utf8_encode($_POST['cobertura']);
+        $licenca = utf8_encode($_POST['licenca']);
+        $atividade = utf8_encode($_POST['atividade']);
+        $empresa = utf8_encode($_POST['empresa']);
+        $endereco = utf8_encode($_POST['endereco']);
+        $orientacoes = utf8_encode($_POST['orientacoes']);
 
 
 

@@ -30,7 +30,7 @@ $orientacoes = ($_POST['orientacoes']);
         $sql = "INSERT INTO pautas (title, editoria, data, cobertura, licenca, atividade, empresa, endereco, orientacoes)
         VALUES ('$title', '$editoria', '$data', '$cobertura', '$licenca', '$atividade', '$empresa', '$endereco', '$orientacoes')";
 
-        echo $sql;
+        echo $sql.'<br>';
 
         if (mysqli_query($conn, $sql)) {
             // SQL Successfully executed
@@ -42,11 +42,10 @@ $orientacoes = ($_POST['orientacoes']);
 
 // Fechar Conexão
         mysqli_close($conn);
+
     }else{
         echo ("Existe <b>n&atilde;o<b> POST!");
     }
-    
-    // }
 
 
 

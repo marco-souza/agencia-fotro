@@ -8,7 +8,7 @@ label, #path {
 }
 
 body {
-    background: #ced33d;
+    background: #efc21e; /* Amarelo */
 }
 
 h1 {
@@ -66,7 +66,7 @@ th {
 #wrap {
     padding: 60px 0;
     color: #4E4E4E;
-    background: #ced33d;
+    background: #efc21e; /* Amarelo */
 }
 
 input, textarea {

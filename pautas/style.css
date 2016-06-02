@@ -29,8 +29,8 @@ h2 {
     /*font-size: 80px;*/
 }
 
-th {
-    color: white !important;
+th, td {
+    color: #ddd;
     text-align: center;
 }
 

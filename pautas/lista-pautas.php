@@ -14,6 +14,9 @@
 
     <link rel="stylesheet" href="./style.css">
 
+    <!-- Importar Funções em php -->
+    <?php require('utils.php'); ?>
+
     <title>Fotro - Pautas</title>
 </head>
 <body>
@@ -33,42 +36,13 @@
                     <th>Data</th>
                     <th>Título</th>
                     <th>Editoria</th>
-                    <!-- <th>Destaque</th> -->
+                    <th>Empresa</th>
                     <th>Alterar</th>
                 </tr>
             </thead>
 
             <tbody>
-                <tr>
-                    <td>12/03/2016</td>
-                    <td>Doe</td>
-                    <td>john@example.com</td>
-                    <td>
-                        <input type="button" name="edit" class="btn btn-info" value="Destacado">
-                        <input type="button" name="edit" class="btn btn-primary" value="Editar">
-                        <input type="button" name="del" class="btn btn-danger" value="Remover">
-                    </td>
-                </tr>
-                <tr>
-                    <td>21/04/2016</td>
-                    <td>Moe</td>
-                    <td>mary@example.com</td>
-                    <td>
-                        <input type="button" name="edit" class="btn btn-success" value="Destacar">
-                        <input type="button" name="edit" class="btn btn-primary" value="Editar">
-                        <input type="button" name="del" class="btn btn-danger" value="Remover">
-                    </td>
-                </tr>
-                <tr>
-                    <td>4/05/2016</td>
-                    <td>Dooley</td>
-                    <td>july@example.com</td>
-                    <td>
-                        <input type="button" name="edit" class="btn btn-success" value="Destacar">
-                        <input type="button" name="edit" class="btn btn-primary" value="Editar">
-                        <input type="button" name="del" class="btn btn-danger" value="Remover">
-                    </td>
-                </tr>
+                <?php checkPautas() ?>
             </tbody>
         </table>
 

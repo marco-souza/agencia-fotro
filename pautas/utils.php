@@ -1,7 +1,7 @@
 <?php
 
 // check BD
-function checkPautas($sql ){
+function checkPautas( ){
     // Abrindo Conexão
     $servername = "localhost";
     $username = "u411818826_admin";

@@ -8,9 +8,11 @@ label, #path {
 }
 
 body {
-    background-image: url("http://i.imgur.com/XugTJ7u.jpg");
+    background-image: url("../images/filete.jpg");
     background-color: #535353;
     background-repeat: repeat-x;
+    background-position: 0 120px;
+
 }
 
 h1 {
@@ -54,12 +56,12 @@ th {
 #path {
     border-top: 1px white solid;
     border-bottom: 1px white solid;
-    color: #EFC21E;
-    margin: 30px 0;
+    /*background: #EFC21E;*/
+    margin: 0 0 30px;
 }
 
 #pauta {
-    padding: 30px;
+    padding: 15px 0 0;
     margin: 0 auto;
     display: block;
     max-width: 800px;

@@ -32,8 +32,8 @@ function checkPautas( ){
             <td>" . $row["editoria"]. "</td>
             <td>" . $row["empresa"]. "</td>
             <td>
-            <input type="button" name="edit" class="btn btn-primary" value="Editar">
-            <input type="button" name="del" class="btn btn-danger" value="Remover">
+            <input type='button' name='edit' class='btn btn-primary' value='Editar'>
+            <input type='button' name='del' class='btn btn-danger' value='Remover'>
             </td>
             </tr>
             ";

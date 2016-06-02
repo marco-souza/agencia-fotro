@@ -30,7 +30,7 @@ h2 {
 }
 
 th {
-    color: white;
+    color: white !important;
     text-align: center;
 }
 

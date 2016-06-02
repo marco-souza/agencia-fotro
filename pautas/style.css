@@ -10,6 +10,7 @@ label, #path {
 body {
     background-image: url("http://i.imgur.com/XugTJ7u.jpg");
     background-color: #535353;
+    background-repeat: repeat-x;
 }
 
 h1 {
@@ -53,7 +54,7 @@ th {
 #path {
     border-top: 1px white solid;
     border-bottom: 1px white solid;
-    /*color: #4E4E4E;*/
+    color: #EFC21E;
     margin: 30px 0;
 }
 
@@ -62,7 +63,7 @@ th {
     margin: 0 auto;
     display: block;
     max-width: 800px;
-    background: #EFC21E;
+    /*background: #EFC21E;*/
 }
 #wrap {
     padding: 60px 0;

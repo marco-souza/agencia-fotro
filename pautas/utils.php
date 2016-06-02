@@ -27,7 +27,7 @@ function checkPautas( ){
             // echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
             echo "
             <tr>
-            <td>" . date_format($row["data"], 'd/m/Y às H:i'). "</td>
+            <td>" . date_format(date_create($row["data"]), 'd/m/Y às H:i'). "</td>
             <td>" . $row["title"]. "</td>
             <td>" . $row["editoria"]. "</td>
             <td>" . $row["empresa"]. "</td>

@@ -9,6 +9,7 @@ label, #path {
 
 body {
     background-image: url("http://i.imgur.com/XugTJ7u.jpg");
+    background-color: #535353;
 }
 
 h1 {
@@ -61,7 +62,7 @@ th {
     margin: 0 auto;
     display: block;
     max-width: 800px;
-
+    background: #EFC21E;
 }
 #wrap {
     padding: 60px 0;
@@ -71,4 +72,11 @@ th {
 
 input, textarea {
     background-color: #333;
+}
+
+.btn {
+    background: #EFC21E;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
 }

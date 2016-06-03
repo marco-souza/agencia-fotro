@@ -1,13 +1,48 @@
 <?php
 
+// Dados Conexão
+$servername = "localhost";
+$username = "u411818826_admin";
+$password = "PjS3LZwzN9vr";
+$dbname = "u411818826_site";
+
+
+function deleteData($table, $where, $redirect ) {
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    // sql to delete a record
+    $sql = "DELETE FROM ".$table" WHERE ".$where;
+
+    if ($conn->query($sql) === TRUE) {
+        // popup msg
+        echo "
+        <script>
+            alert('Registro deletado com Sucesso!');
+        </script>";
+
+        // Redirect
+        header("location:$redirect");
+
+
+    } else {
+        // popup msg
+        echo "
+        <script>
+            alert('Erro ao deletar registro: " . $conn->error."');
+        </script>";
+
+    }
+
+    $conn->close();
+}
+
 // check BD
 function checkPautas( ){
-    // Abrindo Conexão
-    $servername = "localhost";
-    $username = "u411818826_admin";
-    $password = "PjS3LZwzN9vr";
-    $dbname = "u411818826_site";
-
     // Create connection
     $conn = mysqli_connect($servername, $username, $password, $dbname);
     // Check connection
@@ -32,8 +67,8 @@ function checkPautas( ){
             <td>" . $row["editoria"]. "</td>
             <td>" . $row["empresa"]. "</td>
             <td>
-            <input type='button' name='edit' class='btn btn-primary' value='Editar'>
-            <input type='button' name='del' class='btn btn-danger' value='Remover'>
+            <a href='?a=r&id=".$row["id"]."' name='del' class='btn btn-primary' value='Deletar'>
+            <a href='?a=e&id=".$row["id"]."' name='edit' class='btn btn-primary' value='Editar'>
             </td>
             </tr>
             ";

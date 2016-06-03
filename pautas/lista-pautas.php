@@ -1,3 +1,14 @@
+<?php
+
+    if ( isset($_GET['id']) ) {
+
+        // Deletar
+        if ( isset($_GET['r']) ) {
+            deleteData('pautas', "id='".$_GET['id']."' ");
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html>
 <head>

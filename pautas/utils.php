@@ -16,7 +16,7 @@ function deleteData($table, $where, $redirect ) {
     }
 
     // sql to delete a record
-    $sql = "DELETE FROM ".$table" WHERE ".$where;
+    $sql = "DELETE FROM ".$table." WHERE ".$where;
 
     if ($conn->query($sql) === TRUE) {
         // popup msg

@@ -42,7 +42,7 @@ function deleteData($table, $where, $redirect ) {
     }
 
     $conn->close();
-}
+};
 
 // check BD
 function checkPautas( ){

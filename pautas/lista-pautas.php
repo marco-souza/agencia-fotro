@@ -1,11 +1,14 @@
 <?php
 
+    require("utils.php");
+
     if ( isset($_GET['id']) ) {
 
         // Deletar
         if ( $_GET['a'] == 'r' ) {
             deleteData('pautas', "id='".$_GET['id']."' ");
         }
+        
     }
 ?>
 

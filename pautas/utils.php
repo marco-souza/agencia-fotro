@@ -8,6 +8,9 @@ $dbname = "u411818826_site";
 
 
 function deleteData($table, $where, $redirect ) {
+    // Import global vars
+    global $servername, $username, $password, $dbname;
+
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
     // Check connection
@@ -43,7 +46,10 @@ function deleteData($table, $where, $redirect ) {
 
 // check BD
 function checkPautas( ){
-    echo $servername." ". $username." ". $password." ". $dbname;
+
+    // Import global vars
+    global $servername, $username, $password, $dbname;
+
     // Create connection
     $conn = mysqli_connect($servername, $username, $password, $dbname);
     // Check connection
@@ -60,17 +66,16 @@ function checkPautas( ){
 
         // output data of each row
         while($row = mysqli_fetch_assoc($result)) {
-            // echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
             echo "
             <tr>
-                <td>" . date_format(date_create($row["data"]), 'd/m/Y H:i'). "</td>
-                <td>" . $row["title"]. "</td>
-                <td>" . $row["editoria"]. "</td>
-                <td>" . $row["empresa"]. "</td>
-                <td>
-                    <a href='?a=r&id=".$row["id"]."' name='del' class='btn btn-primary' value='Deletar'>
-                    <a href='?a=e&id=".$row["id"]."' name='edit' class='btn btn-primary' value='Editar'>
-                </td>
+            <td>" . date_format(date_create($row["data"]), 'd/m/Y H:i'). "</td>
+            <td>" . $row["title"]. "</td>
+            <td>" . $row["editoria"]. "</td>
+            <td>" . $row["empresa"]. "</td>
+            <td>
+            <a href='?a=r&id=".$row["id"]."' name='del' class='btn btn-primary' value='Deletar'>
+            <a href='?a=e&id=".$row["id"]."' name='edit' class='btn btn-primary' value='Editar'>
+            </td>
             </tr>
             ";
         }

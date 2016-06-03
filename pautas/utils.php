@@ -1,7 +1,7 @@
 <?php
 
 // Dados Conexão
-$servername = "localhost";
+$servername = "mysql.hostinger.com.br";
 $username = "u411818826_admin";
 $password = "PjS3LZwzN9vr";
 $dbname = "u411818826_site";

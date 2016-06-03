@@ -74,7 +74,7 @@ function checkPautas( ){
             <td>" . $row["empresa"]. "</td>
             <td>
             <a href='?a=e&id=".$row["id"]."' name='edit' class='btn btn-link'>Edit</a>
-            <a href='?a=r&id=".$row["id"]."' onclick='return confirm('Tem ceteza?')'; name='del' class='btn btn-danger'>Del</a>
+            <a href='?a=r&id=".$row["id"]."' onclick='return confirm(\"Tem ceteza?\");' name='del' class='btn btn-danger'>Del</a>
             </td>
             </tr>
             ";

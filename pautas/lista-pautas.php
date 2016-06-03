@@ -3,7 +3,7 @@
     if ( isset($_GET['id']) ) {
 
         // Deletar
-        if ( isset($_GET['r']) ) {
+        if ( $_GET['a'] == 'r' ) {
             deleteData('pautas', "id='".$_GET['id']."' ");
         }
     }

@@ -3,6 +3,10 @@
 if( isset($_POST) ) {
 
 // VARS
+    $id = ($_POST['id']);
+    if ($id  == '') {
+        $erro = 1;
+    }
     $title = ($_POST['title']);
     if ($title  == '') {
         $erro = 1;
@@ -56,14 +60,15 @@ if( isset($_POST) ) {
         die("Connection failed: " . mysqli_connect_error());
     }
 
-    // Inserir Pauta na tabela 'pautas'
-    $sql = "INSERT INTO pautas (title, editoria, data, cobertura, licenca, atividade, empresa, endereco, orientacoes)
-    VALUES ('$title', '$editoria', '$data', '$cobertura', '$licenca', '$atividade', '$empresa', '$endereco', '$orientacoes')";
+    // UPDATE Pauta na tabela 'pautas'
+    $sql = "UPDATE pautas
+    SET (title='$title', editoria='$editoria', data='$data', cobertura='$cobertura', licenca='$licenca', atividade='$atividade', empresa='$empresa', endereco='$endereco', orientacoes='$orientacoes')
+    WHERE id='."$id."'";
 
     if (mysqli_query($conn, $sql)) {
 
         // Sucesso
-        include('success.html'); // Tela de Sucesso
+        include('success-edit.html'); // Tela de Sucesso
         // header("Location: http://www.fotro.com.br/pautas");
 
     } else {
@@ -77,7 +82,7 @@ if( isset($_POST) ) {
 
 }else{
     // Sem post
-    header("Location: http://www.fotro.com.br/pautas/");
+    header("Location: http://www.fotro.com.br/pautas/lista-pautas.php");
 }
 
 

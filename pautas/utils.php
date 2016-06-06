@@ -93,6 +93,9 @@ function checkPautas( ){
                   <div class='modal-body'>
                       <form action='edit-pauta.php' method='post'>
 
+
+                          <input type='hidden' name='name' value=' . $row["id"]. '>
+
                           <!-- Titulo -->
                           <div class='form-group  col-lg-12'>
                               <label for='title'>Título </label>

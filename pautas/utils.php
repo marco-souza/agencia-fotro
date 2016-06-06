@@ -94,12 +94,12 @@ function checkPautas( ){
                       <form action='edit-pauta.php' method='post'>
 
 
-                          <input type='hidden' name='name' value=' . $row["id"]. '>
+                          <input type='hidden' name='name' value='". $row["id"] ."'>
 
                           <!-- Titulo -->
                           <div class='form-group  col-lg-12'>
                               <label for='title'>Título </label>
-                              <input class='form-control' type='text' id='title' name='title' required='true'/ value='" . $row["title"]. "'>
+                              <input class='form-control' type='text' id='title' name='title' required='true' value='" . $row["title"]. "'>
                           </div>
 
                           <!-- Editoria -->

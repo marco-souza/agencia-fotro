@@ -7,7 +7,7 @@ label, #path {
     color: white;
 }
 
-.modal-content label {
+.form-group > label {
     color: #333;
 }
 

@@ -30,7 +30,7 @@
 
     <link rel="stylesheet" href="./style.css">
 
-    <title>Fotro - Pautas</title>
+    <title>Fotro - Lista de Pautas</title>
 </head>
 <body>
 

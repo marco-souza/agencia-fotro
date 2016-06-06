@@ -119,7 +119,7 @@ function checkPautas( ){
                           <!-- Data e Hora  -->
                           <div class='form-group  col-lg-6'>
                               <label for='data'>Data e Hora</label>
-                              <input class='form-control' type='datetime-local' id='data' name='data' required='true' value=' " . date_format(date_create($row["data"]), 'YYYY-MM-DDThh:mm'). " '>
+                              <input class='form-control' type='datetime-local' id='data' name='data' required='true' value=' " . date_format(date_create($row["data"]), 'Y-m-dTh:m:s'). " '>
                           </div>
 
                           <!-- Cobertura -->

@@ -7,10 +7,6 @@ label, #path {
     color: white;
 }
 
-.form-group > label {
-    color: #333;
-}
-
 body {
     background-image: url("../images/filete.jpg");
     background-color: #535353;

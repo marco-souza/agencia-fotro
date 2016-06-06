@@ -91,7 +91,7 @@ function checkPautas( ){
                   </div>
 
                   <div class='modal-body'>
-                      <form action='add-pauta.php' method='post'>
+                      <form action='edit-pauta.php' method='post'>
 
                           <!-- Titulo -->
                           <div class='form-group  col-lg-12'>
@@ -119,7 +119,7 @@ function checkPautas( ){
                           <!-- Data e Hora  -->
                           <div class='form-group  col-lg-6'>
                               <label for='data'>Data e Hora</label>
-                              <input class='form-control' type='datetime-local' id='data' name='data' required='true' value='" . $row["data"]. "'>
+                              <input class='form-control' type='datetime-local' id='data' name='data' required='true' value='" . date_format(date_create($row["data"]), 'YYYY-MM-DDThh:mm:ss.ms'). "' />
                           </div>
 
                           <!-- Cobertura -->
@@ -168,9 +168,9 @@ function checkPautas( ){
                           </div>
 
 
-                          <!-- Cadastrar -->
+                          <!-- Salvar -->
                           <div class='form-group  col-lg-12'>
-                              <button class='btn' type='submit' style='background: #EFC21E;'>Cadastrar</button>
+                              <button class='btn' type='submit' style='background: #EFC21E;'>Salvar</button>
                           </div>
 
                       </form>

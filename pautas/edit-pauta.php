@@ -63,7 +63,7 @@ if( isset($_POST) ) {
     // UPDATE Pauta na tabela 'pautas'
     $sql = "UPDATE pautas
     SET (title='$title', editoria='$editoria', data='$data', cobertura='$cobertura', licenca='$licenca', atividade='$atividade', empresa='$empresa', endereco='$endereco', orientacoes='$orientacoes')
-    WHERE id='."$id."'";
+    WHERE id='". $id ."'";
 
     if (mysqli_query($conn, $sql)) {
 

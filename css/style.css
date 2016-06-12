@@ -22,6 +22,10 @@ a:hover, .selec a {
     box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.5);
 }
 
+body {
+    background: rgb(239, 236, 229);
+}
+
 #modal-area {
     z-index: 2;
     background: #000;

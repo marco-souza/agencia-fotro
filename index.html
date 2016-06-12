@@ -21,9 +21,10 @@
     <script type="text/javascript" src="./bower_components/jquery/dist/jquery.min.js"></script>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <script type="text/javascript" src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="./bower_components/bootstrap/js/modal.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
     <!-- Font-Awesome -->
     <link rel="stylesheet" href="./bower_components/font-awesome/css/font-awesome.min.css">
@@ -44,44 +45,45 @@
 </head>
 <body ng-app="navApp" ng-controller="menuCtrl" >
 
-<div id="nav" class="">
+    <div id="nav" class="">
 
-    <div id="btn">
-        <i class="fa fa-bars fa-2x"></i>
-    </div>
-
-    <div id="menu">
-        <div ng-repeat="item in items" class="item {{selected(item.id, currentPage)}}"  ng-click="changePage(item.id)">
-            <a href="">
-                <i class="fa {{item.icon}} fa-2x"></i>
-                <spam>{{item.name}}</spam>
-            </a>
+        <div id="btn">
+            <i class="fa fa-bars fa-2x"></i>
         </div>
+
+        <div id="menu">
+            <div ng-repeat="item in items" class="item {{selected(item.id, currentPage)}}"  ng-click="changePage(item.id)">
+                <a href="">
+                    <i class="fa {{item.icon}} fa-2x"></i>
+                    <spam>{{item.name}}</spam>
+                </a>
+            </div>
+        </div>
+
+        <div id="social">
+            <h5>Redes Sociais</h5>
+            <a href="https://www.facebook.com/agenciafotro/?fref=ts">
+                <i class="fa fa-facebook-official fa-2x"></i>
+            </a>
+            <a href="https://www.flickr.com/photos/137657298@N03/">
+                <i class="fa fa-flickr fa-2x"></i>
+            </a>
+            <a href="https://medium.com/@agenciafotro">
+                <i class="fa fa-medium fa-2x"></i>
+            </a>
+
+        </div>
+
     </div>
 
-    <div id="social">
-        <h5>Redes Sociais</h5>
-        <a href="https://www.facebook.com/agenciafotro/?fref=ts">
-            <i class="fa fa-facebook-official fa-2x"></i>
-        </a>
-        <a href="https://www.flickr.com/photos/137657298@N03/">
-            <i class="fa fa-flickr fa-2x"></i>
-        </a>
-        <a href="https://medium.com/@agenciafotro">
-            <i class="fa fa-medium fa-2x"></i>
-        </a>
+    <div id="header"><img src="http://i.imgur.com/tjgz2Tk.png" alt=""></div>
 
-    </div>
 
-</div>
+    <div id="content">
 
-<div id="header"><img src="http://i.imgur.com/tjgz2Tk.png" alt=""></div>
+        <H2>{{items[currentPage-1].name}}</H2>
 
-<div id="content">
-
-    <H2>{{items[currentPage-1].name}}</H2>
-
-        <div ng-if="currentPage==1">
+        <div ng-if="currentPage==1"> <!-- Portfólio -->
 
             <div id="grid" ng-controller='portfolioCtrl' class=" mdl-grid">
 
@@ -89,44 +91,67 @@
 
                 <!-- Visualização de todos albums -->
                 <div ng-if='!viewAlbum && !viewImage' on-last-repeat ng-repeat="album in data.photosets.photoset" class="item-port  mdl-cell mdl-cell--3-col">
-                  <img class='capa mdl-shadow--2dp' ng-src="https://farm{{album.farm}}.staticflickr.com/{{album.server}}/{{album.primary}}_{{album.secret}}_z.jpg" alt="">
-                  <a href='' class="info" ng-click="detail(album.id)" class="titulo">
-                          <h4>{{album.title._content}}</h4>
-                          <div class="qntd-fotos">{{album.photos}} fotos</div>
-                  </a>
+                    <img class='capa mdl-shadow--2dp' ng-src="https://farm{{album.farm}}.staticflickr.com/{{album.server}}/{{album.primary}}_{{album.secret}}_z.jpg" alt="">
+                    <a href='' class="info" ng-click="detail(album.id)" class="titulo">
+                        <h4>{{album.title._content}}</h4>
+                        <div class="qntd-fotos">{{album.photos}} fotos</div>
+                    </a>
                 </div>
 
                 <!-- Visualização de album -->
                 <div ng-if='viewAlbum' class='frimdl-cell mdl-cell--12-col viewAlbum' >
 
-                  <h2><a href='' ng-click='Back()'><i class="fa fa-arrow-left"></i></a> {{data.photoset.title}}</h2>
-                  <div on-last-repeat ng-repeat="photo in data.photoset.photo" class="item-port  mdl-cell mdl-cell--3-col" style=" height: 200px; overflow: hidden">
+                    <h2><a href='' ng-click='Back()'><i class="fa fa-arrow-left"></i></a> {{data.photoset.title}}</h2>
 
-                      <img class='capa mdl-shadow--2dp' ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_z.jpg">
+                    <div on-last-repeat ng-repeat="photo in data.photoset.photo" class="item-port  mdl-cell mdl-cell--3-col" style=" height: 200px; overflow: hidden">
 
-                      <a class="info" HREF="https://www.flickr.com/photos/137657298@N03/{{photo.id}}/" target="_blank" class="titulo">
-                              <h4>{{photo.title}}</h4>
-                      </a>
-                  </div>
-                  <h2><a href='' ng-click='Back()' style='color: #333'><i class="fa fa-arrow-left"></i> Voltar<a href='#header'><i class="fa fa-arrow-up"></i> Topo</h2></a>
+                        <img class='capa mdl-shadow--2dp' ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_z.jpg">
+
+                        <a class="info" HREF="https://www.flickr.com/photos/137657298@N03/{{photo.id}}/" target="_blank" class="titulo">
+                            <h4>{{photo.title}}</h4>
+                        </a>
+                    </div>
+
+                    <h2><a href='' ng-click='Back()' style='color: #333'><i class="fa fa-arrow-left"></i> Voltar<a href='#header'><i class="fa fa-arrow-up"></i> Topo</h2></a>
                 </div>
 
             </div>
 
         </div>
 
-        <div ng-if="currentPage==2">
+        <div ng-if="currentPage==2"> <!-- Posts Recentes -->
             <!-- TODO: Timeline de posts recentes -->
             <div ng-controller='postsCtrl' class="mdl-grid">
-                {{data}}
+
+                <div ng-if='!data'class="loading"></div>
+
+                <!-- Visualização de Posts -->
+                <div on-last-repeat ng-repeat="post in data.data" class="item-port  mdl-cell mdl-cell--3-col">
+
+                    <img class='capa mdl-shadow--2dp' ng-src="{{post.full_picture}}" alt="">
+
+                    <a href='{{post.link}}' class="info" class="titulo">
+                        <h4>{{post.message  |  limitTo : 140 }}</h4>
+                        <div class="qntd-fotos">{{ post.created_time | date:"dd/MM 'às' h:mm"}}</div>
+                    </a>
+
+                </div>
+
+
             </div>
+
+            <center>
+                <a href='http://fotro.com.br/' class="btn btn-block btn-social btn-lg btn-facebook">
+                    <span class="fa fa-facebook"></span> Página no Facebook
+                </a>
+            </center>
         </div>
 
-        <div ng-if="currentPage==3">
+        <div ng-if="currentPage==3"> <!-- Histórias -->
             <!-- TODO: Timeline de Histórias -->
         </div>
 
-        <div ng-if="currentPage==4">
+        <div ng-if="currentPage==4"> <!-- Contato -->
             <form action="send-mail.php" method="get" autocomplete="on" role="form">
 
                 <!-- Nome -->
@@ -154,6 +179,7 @@
 
             </form>
         </div>
+
     </div>
 
 </div>

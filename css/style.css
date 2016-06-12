@@ -158,6 +158,11 @@ H2{
     color: #ddd;
     padding: 20px 10px;
     text-align: center;
+    font-size: 13px;
+}
+
+.info spam {
+    font-size: 11px;
 }
 
 .capa {
@@ -173,11 +178,6 @@ H2{
   box-sizing: border-box;
   background: transparent;
 }
-/*.item-port::after, .item-port::before {
-    background: #ccc;
-    padding: 10px;
-    margin: 20px;
-}*/
 .qntd-fotos {
   color: #ccc;
   display: inline-block;

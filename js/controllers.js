@@ -1,56 +1,56 @@
 navApp.controller('menuCtrl', ['$scope', '$http', function($scope, $http) {
 
-  $scope.currentPage = 1;
+    $scope.currentPage = 1;
 
-  // Get Images
-  $scope.items = [
-      {
-          "id": 1,
-          "name": "Portfolio",
-          "icon": "fa-photo",
-          "link": "#"
-      },
-    //   {
-    //       "id": 2,
-    //       "name": "Posts Recentes",
-    //       "icon": "fa-newspaper-o",
-    //       "link": "#"
-    //   },
-    //   {
-    //       "id": 3,
-    //       "name": "Histórias",
-    //       "icon": "fa-book",
-    //       "link": "#"
-    //   },
-      {
-          "id": 4,
-          "name": "Contato",
-          "icon": "fa-comments-o",
-          "link": "#"
-      }
-  ];
+    // Get Images
+    $scope.items = [
+        {
+            "id": 1,
+            "name": "Portfolio",
+            "icon": "fa-photo",
+            "link": "#"
+        },
+        {
+            "id": 2,
+            "name": "Posts Recentes",
+            "icon": "fa-newspaper-o",
+            "link": "#"
+        },
+        //   {
+        //       "id": 3,
+        //       "name": "Histórias",
+        //       "icon": "fa-book",
+        //       "link": "#"
+        //   },
+        {
+            "id": 4,
+            "name": "Contato",
+            "icon": "fa-comments-o",
+            "link": "#"
+        }
+    ];
 
-  $scope.selected = function (a, b) {
-    // console.log(a+" == "+b);
-    if (a == b) {
+    $scope.selected = function (a, b) {
         // console.log(a+" == "+b);
-        return "selec";
-    }else {
-        return "";
-    }
-  };
+        if (a == b) {
+            // console.log(a+" == "+b);
+            return "selec";
+        }else {
+            return "";
+        }
+    };
 
-  $scope.changePage = function (n) {
-    // console.log(n);
-    $scope.currentPage = n;
-  }
-  // $.getJSON( "./js/items.json", function( data ) {
-  //     console.log(data);
-  //   });
-  // $http.get("./js/items.json").then(function(res) {
-  //   // $scope.items = res.data;
-  //   // alert(res.data.records);
-  // });
+    $scope.changePage = function (n) {
+        // console.log(n);
+        $scope.currentPage = n;
+    }
+    // $.getJSON( "./js/items.json", function( data ) {
+    //     console.log(data);
+    //   });
+    // $http.get("./js/items.json").then(function(res) {
+    //   // $scope.items = res.data;
+    //   // alert(res.data.records);
+    // });
 
 
 }]);
@@ -58,7 +58,7 @@ navApp.controller('menuCtrl', ['$scope', '$http', function($scope, $http) {
 navApp.controller('portfolioCtrl', ['$scope', '$http', function($scope, $http) {
 
     $scope.$on("onRepeatLast", function() {
-      showCase();
+        showCase();
     });
 
     $scope.Back = function(){
@@ -128,14 +128,18 @@ navApp.controller('portfolioCtrl', ['$scope', '$http', function($scope, $http) {
 }]);
 
 navApp.controller('postsCtrl', ['$scope', '$http', function($scope, $http) {
-// console.log("Entrou")
+
+    $scope.$on("onRepeatLast", function() {
+        showCase();
+    });
+
     $http({
         method: 'GET',
         url: 'https://graph.facebook.com/v2.5/1693385387540997/feed',
         params: {
-            limit: '10',
-            access_token: 'CAANil3PvOM8BAEbempJ9DjBDT3bZBoF7phk7V5N9Tx2HSq6cpnnqs4Sa5UCtxsCTTP8XyXQ9JiK8vtc9gACe3PnPyFXsRUtOEKGJvzNQPCanXzbsJoPD1qXvgvCZBN6UFSKI8CBVTfhnK8h1LlKQXweib9ZAuyzYE4JpZB1NPVWTOigpYz0Ifm8NFLmWTmEZD',
-            fields:'story,message,picture,link',
+            limit: '12',
+            access_token: 'EAANil3PvOM8BACbyWYdatQXmTmjVIL3KZCbZCZCG0fxOZBCtTYpIZClULPKBL7vkHmc4m3wADvfArqQZBn3oPPX83z6uNVvwXa63ChVY57xgZB8VpA7xJOP7zGSD8oMkKZCD2OWTlKbJVrWZB9H5oVGC3SCHt30Es0iMZD',
+            fields:'full_picture,created_time,link,message',
             format: 'json'
         }
     }).then(

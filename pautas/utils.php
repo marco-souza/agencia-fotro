@@ -58,7 +58,7 @@ function checkPautas( ){
     }
 
     // Get Result of query
-    $sql = "SELECT * FROM pautas";
+    $sql = "SELECT * FROM pautas WHERE data > NOW() ORDER BY data ASC";
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) > 0) {

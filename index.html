@@ -8,7 +8,6 @@
     <meta name="author" content="André Yanclous">
     <title>Agência Fotro</title>
 
-
     <!-- AngularJS -->
     <script type="text/javascript" src="./bower_components/angular/angular.min.js"></script>
 
@@ -47,6 +46,7 @@
 
 </head>
 <body ng-app="navApp" ng-controller="menuCtrl" >
+    <show-image></show-image>
 
     <div id="nav" class="">
 
@@ -79,7 +79,7 @@
 
     </div>
 
-    <div id="header"><img src="http://i.imgur.com/tjgz2Tk.png" alt=""></div>
+    <div id="header"><img src="./images/logo.png" alt=""></div>
 
 
     <div id="content">
@@ -94,11 +94,13 @@
 
                 <!-- Visualização de todos albums -->
                 <div ng-if='!viewAlbum && !viewImage' on-last-repeat ng-repeat="album in data.photosets.photoset" class="item-port  mdl-cell mdl-cell--3-col">
+
                     <img class='capa mdl-shadow--2dp' ng-src="https://farm{{album.farm}}.staticflickr.com/{{album.server}}/{{album.primary}}_{{album.secret}}_z.jpg" alt="">
                     <a href='' class="info" ng-click="detail(album.id)" class="titulo">
                         <h4>{{album.title._content}}</h4>
                         <div class="qntd-fotos">{{album.photos}} fotos</div>
                     </a>
+
                 </div>
 
                 <!-- Visualização de album -->
@@ -110,9 +112,26 @@
 
                         <img class='capa mdl-shadow--2dp' ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_z.jpg">
 
-                        <a class="info" HREF="https://www.flickr.com/photos/137657298@N03/{{photo.id}}/" target="_blank" class="titulo">
+                        <a class="info" HREF="" ng-click='showImage(photo.id)' >
                             <h4>{{photo.title}}</h4>
                         </a>
+
+
+                        <div id='bg-modal' ng-hide="photo.id != imgSelected"  ng-click='closeImg()' >
+
+                            <div id="md-content">
+
+                                <div>
+                                    <img ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_z.jpg" alt="" />
+                                </div>
+
+                                <div id="control">
+                                    <p>{{photo.title}}</p>
+                                </div>
+
+                            </div>
+
+                        </div>
                     </div>
 
                     <h2><a href='' ng-click='Back()' style='color: #333'><i class="fa fa-arrow-left"></i> Voltar<a href='#header'><i class="fa fa-arrow-up"></i> Topo</h2></a>

@@ -119,10 +119,11 @@ navApp.controller('portfolioCtrl', ['$scope', '$http', function($scope, $http) {
         );
     }
 
-    $scope.showImage = function(obj, id) {
-        $scope.viewAlbum = false;
-        $scope.viewImage = obj;
-        $scope.viewImage.albumId = id
+    $scope.showImage = function(photoId) {
+        $scope.imgSelected = photoId;
+    }
+    $scope.closeImg = function() {
+        $scope.imgSelected = 0;
     }
 
 }]);

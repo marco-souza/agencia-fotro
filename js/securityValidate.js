@@ -9,8 +9,8 @@ function securityValidate(expire, valid, invalid) {
 	} else {
 		invalid();
 	}
-
-	$('#rest-days').text(rest);
+  // Print
+	// $('#rest-days').text(rest);
 }
 // Format: MM/DD/YYYY HH:MM:SS
 securityValidate(

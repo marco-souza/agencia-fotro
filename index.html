@@ -90,7 +90,7 @@
 
         <div ng-if="currentPage==1"> <!-- Portfólio -->
 
-            <div id="grid" ng-controller='portfolioCtrl' class=" mdl-grid">
+            <div id="grid" ng-controller='portfolioCtrl' class="feed mdl-grid">
 
                 <div ng-if='!data'class="loading"></div>
 
@@ -141,11 +141,16 @@
 
             </div>
 
+            <center>
+                <a target="_blank" href='https://www.flickr.com/photos/137657298@N03/' class="btn btn-block btn-social btn-lg btn-facebook">
+                    <span class="fa fa-flickr"></span> Portfólio no Flickr
+                </a>
+            </center>
         </div>
 
         <div ng-if="currentPage==2"> <!-- Posts Recentes -->
             <!-- TODO: Timeline de posts recentes -->
-            <div ng-controller='postsCtrl' class="mdl-grid">
+            <div ng-controller='postsCtrl' class=" feed mdl-grid">
 
                 <div ng-if='!data'class="loading"></div>
 
@@ -177,13 +182,17 @@
 
             <center>
                 <a target="_blank" href='https://medium.com/@agenciafotro' class="btn btn-block btn-social btn-lg btn-facebook">
-                    <span class="fa fa-medium"></span> Página no Medium
+                    <span class="fa fa-medium"></span> Histórias no Medium
                 </a>
             </center>
 
         </div>
 
-        <div ng-if="currentPage==4"> <!-- Contato -->
+        <div ng-if="currentPage==4" class='feed'> <!-- Contato -->
+
+            <!-- Google Maps -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120040.50727953008!2d-43.97449125873752!3d-19.913198762680484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa69bd2609161b9%3A0x1992eef80de035f8!2sAg%C3%AAncia+Fotro!5e0!3m2!1spt-BR!2sbr!4v1469125568793" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            
             <form action="send-mail.php" method="get" autocomplete="on" role="form">
 
                 <!-- Nome -->

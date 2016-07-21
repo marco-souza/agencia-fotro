@@ -286,7 +286,7 @@ label  {
     font-size: 18px;
 }
 
-#feed-rss {
+#feed-rss, .feed {
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0 0 10px 0;

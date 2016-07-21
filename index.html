@@ -35,6 +35,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/photo-view.css">
     <script type="text/javascript" src="./js/menu.js"></script>
+    <script type="text/javascript" src="./js/parseRSS.js"></script>
     <script src="./js/animation.js"></script>
     <!-- <script src="./js/fb-feed.js"></script> -->
 
@@ -163,7 +164,7 @@
             </div>
 
             <center>
-                <a href='http://fotro.com.br/' class="btn btn-block btn-social btn-lg btn-facebook">
+                <a href='https://www.facebook.com/agenciafotro' class="btn btn-block btn-social btn-lg btn-facebook">
                     <span class="fa fa-facebook"></span> Página no Facebook
                 </a>
             </center>
@@ -171,6 +172,14 @@
 
         <div ng-if="currentPage==3"> <!-- Histórias -->
             <!-- TODO: Timeline de Histórias -->
+            <div id="feed-rss" ng-controller='hitsCtrl'></div>
+
+            <center>
+                <a href='https://medium.com/@agenciafotro' class="btn btn-block btn-social btn-lg btn-facebook">
+                    <span class="fa fa-medium"></span> Página no Medium
+                </a>
+            </center>
+
         </div>
 
         <div ng-if="currentPage==4"> <!-- Contato -->

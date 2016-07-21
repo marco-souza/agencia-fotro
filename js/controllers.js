@@ -16,12 +16,12 @@ navApp.controller('menuCtrl', ['$scope', '$http', function($scope, $http) {
             "icon": "fa-newspaper-o",
             "link": "#"
         },
-        //   {
-        //       "id": 3,
-        //       "name": "Histórias",
-        //       "icon": "fa-book",
-        //       "link": "#"
-        //   },
+          {
+              "id": 3,
+              "name": "Histórias",
+              "icon": "fa-book",
+              "link": "#"
+          },
         {
             "id": 4,
             "name": "Contato",
@@ -152,4 +152,26 @@ navApp.controller('postsCtrl', ['$scope', '$http', function($scope, $http) {
             console.log(err);
         }
     );
+}]);
+
+navApp.controller('hitsCtrl', ['$scope', '$http', function($scope, $http) {
+
+    $scope.$on("onRepeatLast", function() {
+        showCase();
+    });
+
+    parseRSS(
+      'https://medium.com/feed/@agenciafotro', //URL's RSS
+      function(data) {
+        console.log(data);
+        data.entries.forEach(function(v,i){
+          console.log(v.content);
+          $(v.content).appendTo('#feed-rss');
+        })
+        $('#feed-rss img').css('max-width', '100%');
+        $('#feed-rss div').css('border-bottom', '2px dashed #444').css('padding','40px 20px');
+        $('#feed-rss p').css('color', '#444');
+        $('#feed-rss a').css('color', '#555');
+      }
+    )
 }]);

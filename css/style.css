@@ -284,3 +284,12 @@ label  {
     font-family: helvetica;
     font-size: 18px;
 }
+
+#feed-rss {
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 0;
+  width: 95%;
+  margin: 20px auto;
+  background-color: #ddd;
+}

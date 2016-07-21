@@ -176,8 +176,29 @@ navApp.controller('hitsCtrl', ['$scope', '$http', function($scope, $http) {
       function(data) {
         console.log(data);
         data.entries.forEach(function(v,i){
-          console.log(v.content);
           $(v.content).appendTo('#feed-rss');
+          console.log($('#feed-rss div').last());
+          var cont = $('#feed-rss div').last();
+          var nameMonth = [
+            'Janeiro',
+            'Fevereiro',
+            'Março',
+            'Abril',
+            'Maio',
+            'Junho',
+            'Julho',
+            'Agosto',
+            'Setembro',
+            'Outubro',
+            'Novembro',
+            'Dezembro',
+          ]
+
+          var date = new Date(v.publishedDate);
+          var dateSting = (date.getDate()+' de '+nameMonth[date.getMonth()]+' de '+date.getFullYear() );
+          // cont.append(v.title);
+          cont.prepend('<h4 style="color: #444">'+v.title+' <span style="font-size: 12px; color: #555">('+dateSting+')<span> </h4>');
+
         })
         $('#feed-rss img').css('max-width', '100%');
         $('#feed-rss div').css('border-bottom', '2px dashed #444').css('padding','40px 20px');

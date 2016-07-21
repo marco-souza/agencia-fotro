@@ -203,7 +203,7 @@ navApp.controller('hitsCtrl', ['$scope', '$http', function($scope, $http) {
         $('#feed-rss img').css('max-width', '100%');
         $('#feed-rss div').css('border-bottom', '2px dashed #444').css('padding','40px 20px');
         $('#feed-rss p').css('color', '#444');
-        $('#feed-rss a').css('color', '#555');
+        $('#feed-rss a').css('color', '#555').attr('target', '_blank');
       }
     )
 }]);

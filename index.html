@@ -67,13 +67,13 @@
 
         <div id="social">
             <h5>Redes Sociais</h5>
-            <a href="https://www.facebook.com/agenciafotro/?fref=ts">
+            <a target="_blank" href="https://www.facebook.com/agenciafotro/?fref=ts">
                 <i class="fa fa-facebook-official fa-2x"></i>
             </a>
-            <a href="https://www.flickr.com/photos/137657298@N03/">
+            <a target="_blank" href="https://www.flickr.com/photos/137657298@N03/">
                 <i class="fa fa-flickr fa-2x"></i>
             </a>
-            <a href="https://medium.com/@agenciafotro">
+            <a target="_blank" href="https://medium.com/@agenciafotro">
                 <i class="fa fa-medium fa-2x"></i>
             </a>
 
@@ -154,7 +154,7 @@
 
                     <img class='capa mdl-shadow--2dp' ng-src="{{post.full_picture}}" alt="">
 
-                    <a href='{{post.link}}' class="info" class="titulo">
+                    <a target="_blank" href='{{post.link}}' class="info" class="titulo">
                         <h4>{{post.message  |  limitTo : 140 }}</h4>
                         <div class="qntd-fotos">{{ post.created_time | date:"dd/MM 'às' h:mm"}}</div>
                     </a>
@@ -165,7 +165,7 @@
             </div>
 
             <center>
-                <a href='https://www.facebook.com/agenciafotro' class="btn btn-block btn-social btn-lg btn-facebook">
+                <a target="_blank" href='https://www.facebook.com/agenciafotro' class="btn btn-block btn-social btn-lg btn-facebook">
                     <span class="fa fa-facebook"></span> Página no Facebook
                 </a>
             </center>
@@ -176,7 +176,7 @@
             <div id="feed-rss" ng-controller='hitsCtrl'></div>
 
             <center>
-                <a href='https://medium.com/@agenciafotro' class="btn btn-block btn-social btn-lg btn-facebook">
+                <a target="_blank" href='https://medium.com/@agenciafotro' class="btn btn-block btn-social btn-lg btn-facebook">
                     <span class="fa fa-medium"></span> Página no Medium
                 </a>
             </center>

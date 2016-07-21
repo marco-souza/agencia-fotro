@@ -197,7 +197,7 @@ navApp.controller('hitsCtrl', ['$scope', '$http', function($scope, $http) {
           var date = new Date(v.publishedDate);
           var dateSting = (date.getDate()+' de '+nameMonth[date.getMonth()]+' de '+date.getFullYear() );
           // cont.append(v.title);
-          cont.prepend('<h4 style="color: #444">'+v.title+' <span style="font-size: 12px; color: #555">('+dateSting+')<span> </h4>');
+          cont.prepend('<h4 style="color: #444">'+v.title+'</h4> <span style="font-size: 12px; color: #555">('+dateSting+')<span>');
 
         })
         $('#feed-rss img').css('max-width', '100%');

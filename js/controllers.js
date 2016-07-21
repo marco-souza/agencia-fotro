@@ -42,6 +42,17 @@ navApp.controller('menuCtrl', ['$scope', '$http', function($scope, $http) {
 
     $scope.changePage = function (n) {
         // console.log(n);
+
+        $("#content").animate({'margin-left': "60px"}, 200);
+
+        $("#menu > div spam").hide()
+        $("#nav").animate({'width': "60px"}, 200);
+
+        $("#social").animate({'width': "60px"}, 200);
+        // $("#social h5").hide()
+
+        $("#btn").animate({'width': "60px"}, 200);
+
         $scope.currentPage = n;
     }
     // $.getJSON( "./js/items.json", function( data ) {

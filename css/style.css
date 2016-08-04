@@ -117,10 +117,11 @@ body {
 }
 
 #content {
-    padding: 70px;
+    padding: 30px;
     margin-left: 60px;
     color: black !important;
     box-sizing: border-box;
+    text-align: center;
 }
 
 H2{

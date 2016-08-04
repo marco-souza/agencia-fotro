@@ -16,12 +16,12 @@ navApp.controller('menuCtrl', ['$scope', '$http', function($scope, $http) {
             "icon": "fa-newspaper-o",
             "link": "#"
         },
-          {
-              "id": 3,
-              "name": "Histórias",
-              "icon": "fa-book",
-              "link": "#"
-          },
+          // {
+          //     "id": 3,
+          //     "name": "Histórias",
+          //     "icon": "fa-book",
+          //     "link": "#"
+          // },
         {
             "id": 4,
             "name": "Contato",

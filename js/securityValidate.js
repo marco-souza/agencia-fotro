@@ -15,7 +15,7 @@ function securityValidate(expire, valid, invalid) {
 // Format: MM/DD/YYYY HH:MM:SS
 securityValidate(
 
-	'8/21/2016 11:00',
+	'8/15/2016 9:00',
 
 	// Valido
 	function() {
